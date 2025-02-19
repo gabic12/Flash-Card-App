@@ -18,9 +18,17 @@ def flip_card():
     canvas.itemconfig(language_text, text="English", fill="white")
     canvas.itemconfig(word_text, text=current_card["English"], fill="white")
 
+def incorrect_word():
+    """Wrong words will be saved in a new .csv file"""
+    incorrect_words.append(current_card)
+    new_data = pandas.DataFrame(incorrect_words)
+    new_data.to_csv("data/incorrect_words.csv", index=False)
+    get_word()
+
 data = pandas.read_csv("data/french_words.csv")
 words_list = data.to_dict(orient="records") #List of dictionaries
 current_card = {}
+incorrect_words = []
 
 #Tkinter UI
 window = Tk()
@@ -43,7 +51,7 @@ word_text = canvas.create_text(400, 263, text="", font=("Arial", 60, "bold"))
 canvas.grid(row=1, column=1,  columnspan=2)
 
 #Buttons
-wrong_button = Button(image=wrong_button_image, highlightthickness=0, command=get_word)
+wrong_button = Button(image=wrong_button_image, highlightthickness=0, command=incorrect_word)
 wrong_button.grid(row=2, column=1)
 right_button = Button(image=right_button_image, highlightthickness=0, command=get_word)
 right_button.grid(row=2, column=2)
