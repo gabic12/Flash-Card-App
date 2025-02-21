@@ -1,7 +1,3 @@
-This Flash Card App was created with the help of Python Turtle GUI and Python pandas library.
+This Flash Card App was created with the help of Python Turtle GUI (Python v3.13) and Python pandas library.
 
-Requirements:
- -  latest version of Python (app was created with version 3.13)
- -  pandas library (run 'pip install pandas' in the terminal)
-
-This Flash Card app will test your knowlegde of French language. I have created a .csv file with the most used 100 French words. The app will start with a random French word displayed on a card and after 3 seconds, the card will flip revealing the English translation of that word. The user can press the ✓ button, if he guessed the word and a new flash card will be displayed, or the X button, if he did not guessed the word - this incorrect word will be stored in a new .csv file (data/incorrect_words.csv) and the user can check the list of all French words that he needs to learn.
+This Flash Card app will test your knowledge of the French language. It uses a .csv file containing the 100 most commonly used French words. The app begins by displaying a random French word on a card. After 3 seconds, the card flips to reveal its English translation. The user can press the ✓ button if they guessed the word correctly, prompting a new flashcard to appear. If they did not guess correctly, they can press the X button, which stores the incorrect word in a separate .csv file (data/incorrect_words.csv) - this allows the user to review and focus on words they need to learn.
